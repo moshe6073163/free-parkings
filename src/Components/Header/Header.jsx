@@ -47,7 +47,7 @@ export default function Header() {
           </Link>
         </li>
         <li className="mx-1 mt-2">Free Parkings</li>
-        <li></li>mmoommo
+        <li></li>mmoo
         <p className="p-2 ">{showName ? currentUser.yourName : ""}</p>
         <img
           className="rounded-circle mt-1"
