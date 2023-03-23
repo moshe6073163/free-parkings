@@ -8,7 +8,7 @@ import { height } from "@mui/system";
 import Allert from "../allert/Allert";
 
 export default function Home() {
-  const {setIsShowAlert , setInput, popularPosts, currentUser, setFavoritePosts, favoritePosts, updatePost, updateUser} = useContext(MyContext);
+  const {setIsShowAlert , setInput, currentUser, setFavoritePosts, favoritePosts, updatePost, updateUser} = useContext(MyContext);
   const [inputData, setInputData] = useState([]); 
   
   
@@ -116,32 +116,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-
-    <div className="row justify-content-center ">
-    <div className="row justify-content-around container rounded mr-0">
-   
-      {popularPosts[0] ? popularPosts.map((item, i) => (
-        <div className="border cards rounded mb-2" style={{ width: "300px", height: "450px" }}>
-          <Link to={item.id} key={i} className={'text-decoration-none color-font'}>
-          <div className="d-flex justify-content-center mt-3" style={{ height: "65%" }}>
-              <img className="img-card border rounded" src={item.imgUrl} style={{ height: "90%", width: "100%" }}/>
-          </div>
-          <h5 className=""><b>City: </b>{item.city}</h5>
-          <h5 className=""><b>Street: </b>{item.street.length > 20 ? item.street.substring(0, 20) + "..." : item.street }</h5>
-          <h5 className=""><b>Price: </b>{item.price}₪</h5>
-          </Link>
-          <div className="d-flex justify-content-between">
-            <div>{item.favorite + " Like this parking "}</div>
-            <div className="color-font" style={{width:'30px'}} onClick={()=>setFavorite(item)}>
-              {currentUser.id ? currentUser.favoritePosts[0] ? setFav(item.id) : <GrFavorite size={30}/> :  <GrFavorite size={30}/>}
-            </div>
-          </div>
-        </div>
-      )) :''}
-    </div>
-  </div>
-
-    
   </div>
   </>
   );
