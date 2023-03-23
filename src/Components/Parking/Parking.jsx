@@ -43,7 +43,7 @@ export default function Parking() {
   
   useEffect(()=>{
     setCurrent( posts.find((post) => post.id === id));
-  },[])
+  },[posts])
 
   // useEffect(()=>{
   //  let v = users.find((e)=> e.userId == current.userId);
