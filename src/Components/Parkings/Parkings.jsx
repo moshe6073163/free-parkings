@@ -116,7 +116,7 @@ export default function Parkings() {
 
   return (
   <> 
-  <div className="container h-auto">
+  <div className="container h-auto"> momo
   <div className="d-flex justify-content-between mb-4" >
     <input id="search" className="w-50 rounded mx-3" type="search" placeholder="Search City" onChange={(e) => postInput(e.target.value)}/>
     <button className="btn btn-primary mx-4 d-flex " onClick={(e)=>setMaps(e)}><div>Live Map</div> 
