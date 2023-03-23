@@ -31,7 +31,6 @@ import { defineElement } from 'lord-icon-element';
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
 
-
 export const MyContext = createContext(); // הצהרה רישונית
 
 export default function App() {
