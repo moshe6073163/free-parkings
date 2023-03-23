@@ -82,17 +82,7 @@ export default function App() {
     })
   }
 
-  let popularPostsRef = collection(firestore,'popularPosts');
-  function setPopular(popularPost){
-    popularPostsRef = collection(firestore,'popularPosts');
-    try {
-      addDoc(popularPostsRef, popularPost)
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
-
+ 
   // function to create new post
   let postsRef = collection(firestore, "posts");
   const setNewPost = (postData) => {
