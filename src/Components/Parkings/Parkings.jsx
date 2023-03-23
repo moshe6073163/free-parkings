@@ -131,7 +131,7 @@ export default function Parkings() {
 
   {!map ? "" :
     <div className="row d-flex justify-content-center "> 
-    <MapContainer className="mb-3 mx-3 rounded col-sm-11 col-8 " id="my" center={[cordUser.latitude , cordUser.longitude]} style={{ height:'500px'}} zoom={13} scrollWheelZoom={true}>
+    <MapContainer className="mb-3 mx-3 rounded col-sm-11 col-10 " id="my" center={[cordUser.latitude , cordUser.longitude]} style={{ height:'500px'}} zoom={13} scrollWheelZoom={true}>
       <TileLayer 
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url={`https://maps.geoapify.com/v1/tile/maptiler-3d/{z}/{x}/{y}.png?apiKey=${myAPIKey}`}

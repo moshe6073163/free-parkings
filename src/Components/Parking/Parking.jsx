@@ -174,7 +174,7 @@ async function maps(e){
               <button class="btn btn-primary btn-lg mb-2" style={{ height:'48px'}} onClick={() => hideContact()}>contact</button>
               <SpeedAccess />
               {hide ? 
-              <div className="mx-4 inPositionContact">
+              <div className="mx-4 ">
                 <img className="" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" style={{ width: "90px", height: "90px" }} />
                 <div className="">Name: {current.contactName}</div>
                 <div className="">Phone: <a href={`tel:${current.contactPhone}`}>{current.contactPhone}</a></div>
