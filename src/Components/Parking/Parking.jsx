@@ -187,11 +187,13 @@ async function maps(e){
             </div>
           </div>
         </ul>
-      </div> 
-      <div className="d-flex mb-3">
-        <SpeedAccess/>
       </div>
-      <button className="btn mt-2 mb-2" onClick={e=>maps(e)} ><IoNavigateCircleSharp className="bg-light rounded-circle" size={48}/></button>
+
+      <div className="d-flex">
+      <SpeedAccess/>
+      </div>
+
+      <button  className="btn mt-2 mb-2" onClick={e=>maps(e)} ><IoNavigateCircleSharp className="bg-light rounded-circle"  size={48}/></button>
       <div className="">
         <div className="" style={{ height:'450px', width:'90%'}} id="my-map"></div>
       </div>

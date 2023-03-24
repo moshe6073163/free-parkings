@@ -9,8 +9,6 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { GrFavorite } from "react-icons/gr";
 import { MdFavorite } from "react-icons/md";
 
-
-
 import {
   EmailIcon,
   EmailShareButton,

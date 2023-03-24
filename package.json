@@ -23,6 +23,7 @@
     "lottie-web": "^5.10.2",
     "mapbox-gl": "^2.12.1",
     "mapbox-gl-leaflet": "^0.0.15",
+    "mdb-ui-kit": "^6.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
