@@ -2,9 +2,3 @@
     position: absolute;
     z-index: 9999;
 }
-
-.inPositionContact{
-    position: absolute;
-    z-index: 9999;
-    right: 500px;
-}

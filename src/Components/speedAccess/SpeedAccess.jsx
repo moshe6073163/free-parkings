@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { BsShare } from "react-icons/bs";
+
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -16,7 +18,7 @@ import {
 export default function SpeedAccess() {
     return (    
     <Box>
-        <SpeedDial ariaLabel="SpeedDial basic example" icon={<SpeedDialIcon />} >
+        <SpeedDial ariaLabel="SpeedDial basic example" icon={<BsShare />} >
             <SpeedDialAction
                 icon={
                     <WhatsappShareButton url={window.location.href} >
@@ -25,7 +27,6 @@ export default function SpeedAccess() {
                 }
                 tooltipTitle={"share whatsap"}
             />
-
         </SpeedDial>
     </Box>
     )

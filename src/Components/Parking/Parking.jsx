@@ -7,6 +7,8 @@ import { useGeolocated } from 'react-geolocated';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import SpeedAccess from "../speedAccess/SpeedAccess"
+import { MdCall } from "react-icons/md";
+import { IoNavigateCircleSharp } from "react-icons/io5";
 
 import {
   EmailIcon,
@@ -40,7 +42,8 @@ export default function Parking() {
   const {posts, setCordUser, cordUser, users} = useContext(MyContext);
   // const [img, setImg] = useState();
   const [current, setCurrent] = useState();
-  
+  const [wid, setWid] = useState(false);
+
   useEffect(()=>{
     setCurrent( posts.find((post) => post.id === id));
   },[posts])
@@ -100,7 +103,7 @@ export default function Parking() {
     if(v.coords != undefined){
       setCordUser({latitude : v.coords.latitude, longitude: v.coords.longitude});
     }
-  }, [v.coords])
+   }, [v.coords])
 
   var map;
 let m = document.getElementById('my-map');
@@ -172,20 +175,23 @@ async function maps(e){
           <div class="row mt-5">
             <div class="col-7 d-flex">
               <button class="btn btn-primary btn-lg mb-2" style={{ height:'48px'}} onClick={() => hideContact()}>contact</button>
-              <SpeedAccess />
               {hide ? 
-              <div className="mx-4 ">
+              <div className={'mx-4 d-flex flex-column align-items-center'}>
                 <img className="" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" style={{ width: "90px", height: "90px" }} />
-                <div className="">Name: {current.contactName}</div>
-                <div className="">Phone: <a href={`tel:${current.contactPhone}`}>{current.contactPhone}</a></div>
+                <div className="d-flex justify-content-center mb-2">Name: {current.contactName}</div>
+                <div ><a href={`tel:${current.contactPhone}`}><MdCall  className="bg-light rounded-circle mb-3" size={48}/></a></div>
+                
+                <a href={`https://api.whatsapp.com/send?phone=972${current.contactPhone.substring(1)}&text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%92%D7%99%D7%A2%20%D7%93%D7%A8%D7%9A%20Free%20Parkings%2C%0A%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%94.`}><WhatsappIcon round={true} size={50} /></a>
               </div>
             : ''}
             </div>
           </div>
         </ul>
-        
       </div> 
-      <button className="btn btn-primary mt-2 mb-2" onClick={e=>maps(e)} >Live</button>
+      <div className="d-flex mb-3">
+        <SpeedAccess/>
+      </div>
+      <button className="btn mt-2 mb-2" onClick={e=>maps(e)} ><IoNavigateCircleSharp className="bg-light rounded-circle" size={48}/></button>
       <div className="">
         <div className="" style={{ height:'450px', width:'80%'}} id="my-map"></div>
       </div>
