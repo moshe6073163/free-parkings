@@ -193,7 +193,7 @@ async function maps(e){
       </div>
       <button className="btn mt-2 mb-2" onClick={e=>maps(e)} ><IoNavigateCircleSharp className="bg-light rounded-circle" size={48}/></button>
       <div className="">
-        <div className="" style={{ height:'450px', width:'80%'}} id="my-map"></div>
+        <div className="" style={{ height:'450px', width:'90%'}} id="my-map"></div>
       </div>
     </div> : ''}
     </div>
