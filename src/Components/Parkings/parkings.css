@@ -7,7 +7,7 @@
 .cards:hover {
   background-color: rgba(58, 73, 100, 0.5);
   color: rgb(206, 215, 105);
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05);
 }/*# sourceMappingURL=parkings.css.map */
 
 .color-font{

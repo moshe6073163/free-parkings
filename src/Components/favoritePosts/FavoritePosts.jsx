@@ -29,7 +29,7 @@ export default function FavoritePosts () {
                 <div key={i} className="border cards rounded mb-2" style={{ width: "300px", height: "450px" }}>
                     <Link to={`/Parkings/${post.id}`} className={'text-decoration-none color-font'}>
                         <div className="d-flex justify-content-center mt-3" style={{ height: "65%" }}>
-                            <img className="img-card border rounded" src={post.imgUrl} style={{ height: "90%", width: "100%" }}/>
+                           <img className="img-card border rounded" src={post.imgUrl} style={{ height: "90%", width: "100%" }}/>
                         </div>
                         <h4 className=""><b>City: </b>{post.city}</h4>
                         <h5 className=""><b>Street: </b>{post.street.length > 20 ? post.street.substring(0, 20) + "..." : post.street }</h5>

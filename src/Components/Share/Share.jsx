@@ -15,7 +15,7 @@ import {
     WhatsappShareButton,
 } from "react-share";
 
-export default function SpeedAccess() {
+export default function Share() {
     return (    
     <Box>
         <SpeedDial ariaLabel="SpeedDial basic example" icon={<BsShare />} >

@@ -16,26 +16,12 @@ import {
   EmailShareButton,
   FacebookIcon,
   FacebookShareButton,
-  HatenaShareButton,
-  InstapaperShareButton,
-  LineShareButton,
-  LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
-  RedditShareButton,
   TelegramShareButton,
-  TumblrShareButton,
-  TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
   WhatsappIcon,
   WhatsappShareButton,
   WorkplaceShareButton
 } from "react-share";
-import SpeedAccess from "../speedAccess/SpeedAccess";
+import Share from "../Share/Share";
 import Allert from "../allert/Allert";
 
 
