@@ -328,7 +328,7 @@ export default function App() {
   return (
     <div className="bg_site">
     <div className="" >
-      <div id="GoToUp" className="" style={{minHeight: '86vh'}}>
+      <div id="GoToUp" className="" style={{minHeight: '90vh'}}>
         <MyContext.Provider value={AllData}>
         {isShowAlert.set ? isShowAlert.component : ""}
           <Header  />

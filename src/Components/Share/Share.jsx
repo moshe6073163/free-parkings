@@ -18,7 +18,7 @@ import {
 export default function Share() {
     return (    
     <Box>
-        <SpeedDial ariaLabel="SpeedDial basic example" icon={<BsShare />} >
+        <SpeedDial sx={{ position: 'absolute', bottom:'50px', left:'150px' }} ariaLabel="SpeedDial basic example" icon={<BsShare /> } >
             <SpeedDialAction
                 icon={
                     <WhatsappShareButton url={window.location.href} >

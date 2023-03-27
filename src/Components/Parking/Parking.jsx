@@ -169,9 +169,9 @@ export default function Parking() {
               <div className="shareParking">
                 <Share />
               </div>
-            </ul>           
+            </ul>
           </div>
-        </div> : ''}
+        </div> : ""}
     </div>
   )
 }
