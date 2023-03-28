@@ -13,7 +13,7 @@ import NewUser from "./Pages/NewUser";
 import PostParking from "./Pages/PostParking";
 import MyAccount from "./Pages/MyAccount";
 import PageError from "./Pages/PageError";
-import MyParking from "./Components/MyParking";
+import MyParking from "./Pages/MyParking";
 import Admin from "./Pages/Admin";
 import Users from "./Pages/Users";
 import FavoritePosts from "./Pages/FavoritePosts";
@@ -147,7 +147,7 @@ export default function App() {
   }
    
 
-  
+
   const localeUId = localStorage.getItem('userId');
   function setUser (UserName, password){ 
     let queryUser;
