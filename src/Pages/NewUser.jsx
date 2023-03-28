@@ -1,8 +1,6 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import { MyContext } from '../App';
-import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-import { FaTrashAlt } from "react-icons/fa";
 import { getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {app} from '../Firebase';
 import { FcGoogle } from "react-icons/fc";
@@ -17,7 +15,6 @@ export default function NewUser() {
   const phone = useRef();
   const yourName = useRef();
   const address = useRef();
-  const navigate = useNavigate();
 
 
   const submitHandler = (e) => {

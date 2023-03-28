@@ -8,16 +8,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Share from "../Components/Share"
 import { MdCall } from "react-icons/md";
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, TelegramShareButton, WhatsappIcon, WhatsappShareButton, } from "react-share";
 
-import {
-  EmailIcon,
-  EmailShareButton,
-  FacebookIcon,
-  FacebookShareButton,
-  TelegramShareButton,
-  WhatsappIcon,
-  WhatsappShareButton,
-} from "react-share";
 
 const myAPIKey = "7aeea4fe26fa4c258c13fb720430df95";
 export default function Parking() {

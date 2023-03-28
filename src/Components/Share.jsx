@@ -3,17 +3,8 @@ import { BsShare } from "react-icons/bs";
 
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import {
-    EmailIcon,
-    EmailShareButton,
-    FacebookIcon,
-    FacebookShareButton,
-    TelegramShareButton,
-    WhatsappIcon,
-    WhatsappShareButton,
-} from "react-share";
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, TelegramShareButton, WhatsappIcon, WhatsappShareButton, } from "react-share";
 
 export default function Share() {
     return (    

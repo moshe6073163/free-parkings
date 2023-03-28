@@ -5,12 +5,11 @@ import { FcGoogle } from "react-icons/fc";
 
 import {app} from '../Firebase';
 import { getAuth, signInWithPopup, GoogleAuthProvider, sendPasswordResetEmail, confirmPasswordReset } from "firebase/auth";
-import Allert from "../Components/Allert";
 
 
 export default function LogIn() {
 
-  const { setUser, setProfileUrl, setNewUser } = useContext(MyContext);
+  const { setUser, setProfileUrl } = useContext(MyContext);
   const [email, setEmail] = useState('');
   const userName = useRef();
   const password = useRef();

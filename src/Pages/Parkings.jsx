@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useGeolocated } from "react-geolocated";
+import Allert from "../Components/Allert";
 import { Link } from "react-router-dom";
 import { MyContext } from "../App";
 import L from 'leaflet';
@@ -7,7 +8,6 @@ import {} from 'mapbox-gl-leaflet';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { GrFavorite } from "react-icons/gr";
 import { MdFavorite } from "react-icons/md";
-import Allert from "../Components/Allert";
 
 
 const myAPIKey = "7aeea4fe26fa4c258c13fb720430df95";

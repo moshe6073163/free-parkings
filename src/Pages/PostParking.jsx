@@ -48,6 +48,7 @@ export default function PostParking() {
     if (currentUser.yourName == undefined)
       changeNavigate();
   }, []);
+  
 
   useEffect(() => {
     if (cityInput) {
@@ -55,15 +56,13 @@ export default function PostParking() {
     }
   }, [cityInput])
 
+
   useEffect(() => {
     if (total) {
       location(total + " " + addressInput, setTotalStreet);
     }
   }, [addressInput])
 
-
-
-  // let img = document.getElementById("myimg");
 
   const submitPost = (e) => {
     e.preventDefault();
@@ -275,121 +274,3 @@ export default function PostParking() {
     </>
   );
 };
-
-
-
-{/* <div className="d-flex justify-content-center border">
-                <Carousel autoPlay showIndicators={true} transitionTime={3} showThumbs={false} infiniteLoop={true} showStatus={true}>
-                {url.map((item, i) => ( */}
-//   <div className='bg-dark '>
-//     <div className='text-primary ' key={i} >
-//       <img className='w-75 rounded' style={{ height:"250px"}}  src={item}/>
-//     </div>
-//   </div>))}
-// </Carousel>
-// </div>}
-
-
-
-
-
-
-
-{/* <div className="container h-100 ">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-12 col-xl-11">
-              <div className="card text-white" style={{ borderRadius: "25px", backgroundColor: "rgba(31, 30, 29, 0.6)",}}>
-                <div className="card-body p-md-5">
-                  <div className="row justify-content-center">
-                    <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Post A Park</p>
-                      <form className="mx-1 mx-md-4" onSubmit={submitPost}>
-
-                      <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                                <TextField required color="warning" id="outlined-basic" label="City" variant="outlined" onChange={(e)=>setCityInput(e.target.value)} className="bg-light" />
-                                <div>{totalCity.map((e, i)=>(
-                                  <div>{i < 1 ? <button className="col-4 border" onClick={(e)=>setCity(e.target.innerHTML)}>{e.properties.city}</button> : totalCity[i].properties.city == totalCity[i-1].properties.city ? "" : <button className="col-4 border" onClick={(e)=>setCity(e.target.innerHTML)}>{totalCity[i].properties.city}</button>}</div>
-                                ))}</div>
-                            </div>
-                        </div>
-
-                        <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                            <TextField required color="warning" id="outlined" label="Street" variant="outlined" onChange={(e)=>setAddressInput( e.target.value)} className="bg-light" />
-                            <div>{totalStreet.map((e, i)=>(
-                                  <div>{i < 1 ? <button className="col-4 border" onClick={(e)=>setTotalAddress(e.target.innerHTML)}>{e.properties.address_line1}</button> : totalStreet[i].properties.address_line1 == totalStreet[i-1].properties.address_line1 ? "" : <button className="col-4 border" onClick={(e)=>setTotalAddress(e.target.innerHTML)}>{totalStreet[i].properties.address_line1}</button>}</div>
-                                ))}</div>
-                            </div>
-                        </div>
-
-                        <button className="btn btn-dark text-primary mb-3" onClick={e=>setAutoLocation(e)}>Search By Current Location <BiCurrentLocation/></button>
-
-                        <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                                <input required placeholder="sun - thurs " type="text" id="form3Example4c" className="form-control" onChange={e => setActivityTime(e)}/>
-                                <label className="form-label" for="form3Example4c">Activity time?</label>
-                            </div>
-                        </div>
-
-                        <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                            <input required placeholder="Car / Trunk / Bike" type="text" id="form3Example4c" className="form-control" ref={suitable}/>
-                            <label className="form-label" for="form3Example4c">suitable for?</label>
-                            </div>
-                        </div>
-
-                        <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                                <input required placeholder="Price For Hour " type="text" id="form3Example4c" className="form-control" ref={price}/>
-                                <label className="form-label" for="form3Example4c">Please Enter Price: </label>
-                            </div>
-                        </div>
-
-                        <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                                <label className="form-label" for="form3Example3c">Have a Code?</label>
-                                <input type="checkbox" id="form3Example3c" onChange={(e) => setCode(e)} className="mx-2"/>
-                                { code == undefined ? "" :
-                                code.target.checked == false 
-                                ?
-                                ("") 
-                                : 
-                                (<input required autoFocus placeholder="Please Enter A Code" onChange={(e) => setKeyCode(e)} type="number" />)}
-                            </div>
-                        </div>
-
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <div className="form-outline flex-fill mb-0">
-                            <label className=" form-label" for="form3Example4c">accessibility?</label>
-                            <input type="checkbox" ref={accessibility} id="form3Example4c" className="mx-2"/>
-                          </div>
-                        </div>
-
-                        <div className="mb-1">
-                            <div className="">
-                                <input onChange={setCityInputaleImage} ref={imageRef} type="file" />
-                            </div>
-                        </div>
-                        <span className="">The selected image</span>
-                        {image == undefined 
-                        ?
-                        ("") 
-                        : 
-                        (<div style={{ marginTop: "9px" }}>
-                            <img className="rounded mx-3" src={url} style={{ width: "250px", height: "150px" }} id="myimg"/>
-                            <button onClick={unsetImage}><FaTrashAlt /></button>
-                        </div>)}
-
-                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                            <button type="submit" className="btn btn-primary btn-lg mt-4">{isLoading == true ? <img style={{width:'48px', height:'48px'}} src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"/> : "submit"}</button>
-                        </div>
-
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
