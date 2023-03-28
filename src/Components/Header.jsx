@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { FaUserAltSlash, FaUserCheck } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { MyContext } from "../../App";
+import { MyContext } from "../App";
 import { MdFavorite } from "react-icons/md";
 // import { getAuth, signOut } from "firebase/auth";
 // import { app } from "../../firebase/Firebase";

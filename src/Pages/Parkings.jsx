@@ -1,26 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useGeolocated } from "react-geolocated";
 import { Link } from "react-router-dom";
-import { MyContext } from "../../App";
-import './parkings.css';
+import { MyContext } from "../App";
 import L from 'leaflet';
 import {} from 'mapbox-gl-leaflet';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { GrFavorite } from "react-icons/gr";
 import { MdFavorite } from "react-icons/md";
-
-import {
-  EmailIcon,
-  EmailShareButton,
-  FacebookIcon,
-  FacebookShareButton,
-  TelegramShareButton,
-  WhatsappIcon,
-  WhatsappShareButton,
-  WorkplaceShareButton
-} from "react-share";
-import Share from "../Share/Share";
-import Allert from "../allert/Allert";
+import Allert from "../Components/Allert";
 
 
 const myAPIKey = "7aeea4fe26fa4c258c13fb720430df95";

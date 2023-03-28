@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import { useState } from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { MyContext } from '../../App';
+import { MyContext } from '../App';
 import { Link } from "react-router-dom";
 import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai';
 import {TiUserDelete} from 'react-icons/ti';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
-import Allert from '../allert/Allert';
+import Allert from '../Components/Allert';
 
 export default function MyAccount() {
   const navigate = useNavigate();

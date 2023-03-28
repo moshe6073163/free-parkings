@@ -2,9 +2,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { MyContext } from "../App";
-import { createContext, useContext } from "react";
-import { useEffect } from "react";
 
 ////////////////////////////////////////////////
   // TODO: Add SDKs for Firebase products that you want to use

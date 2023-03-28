@@ -2,27 +2,27 @@ import React, { createContext, useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import "./App.css";
-import Header from "./Components/Header/Header";
-import Home from "./Components/Home/Home";
-import LogIn from "./Components/logIn/LogIn";
-import Parkings from "./Components/Parkings/Parkings";
-import Parking from "./Components/Parking/Parking";
-import About from "./Components/About/About";
-import Footer from "./Components/Footer/Footer";
-import NewUser from "./Components/NewUser/NewUser";
-import PostParking from "./Components/PostParking/PostParking";
-import MyAccount from "./Components/MyAccount/MyAccount";
-import PageError from "./Components/PageError/PageError";
-import MyParking from "./Components/myParking/MyParking";
-import Admin from "./Components/admin/Admin";
-import Users from "./Components/Users/Users";
-import FavoritePosts from "./Components/favoritePosts/FavoritePosts";
+import Header from "./Components/Header";
+import Home from "./Pages/Home";
+import LogIn from "./Pages/LogIn";
+import Parkings from "./Pages/Parkings";
+import Parking from "./Pages/Parking";
+import About from "./Pages/About";
+import Footer from "./Components/Footer";
+import NewUser from "./Pages/NewUser";
+import PostParking from "./Pages/PostParking";
+import MyAccount from "./Pages/MyAccount";
+import PageError from "./Pages/PageError";
+import MyParking from "./Components/MyParking";
+import Admin from "./Pages/Admin";
+import Users from "./Pages/Users";
+import FavoritePosts from "./Pages/FavoritePosts";
 
 // firestore Files
-import { firestore, storage } from "./firebase/Firebase";
+import { firestore, storage } from "./Firebase";
 import { addDoc, collection, onSnapshot, query, where, doc, updateDoc, deleteDoc } from "@firebase/firestore";
 import { getDownloadURL, ref, uploadBytes,deleteObject, listAll  } from "firebase/storage";
-import Allert from "./Components/allert/Allert";
+import Allert from "./Components/Allert";
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 // lord icon
@@ -147,6 +147,7 @@ export default function App() {
   }
    
 
+  
   const localeUId = localStorage.getItem('userId');
   function setUser (UserName, password){ 
     let queryUser;

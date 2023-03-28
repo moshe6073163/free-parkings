@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { MyContext } from '../../App';
+import { MyContext } from '../App';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 

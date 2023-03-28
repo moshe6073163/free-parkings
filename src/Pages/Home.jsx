@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { MyContext } from "../../App";
-import { location } from "../API/APIs";
+import { MyContext } from "../App";
+import { location } from "../Components/APIs";
 import { GrFavorite } from "react-icons/gr";
 import { MdFavorite } from "react-icons/md";
 import { height } from "@mui/system";
-import Allert from "../allert/Allert";
+import Allert from "../Components/Allert";
 
 export default function Home() {
   const {setIsShowAlert , setInput, currentUser, setFavoritePosts, favoritePosts, updatePost, updateUser} = useContext(MyContext);

@@ -1,12 +1,11 @@
 import React, { useContext, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { MyContext } from '../../App';
-import "./LogIn.css";
+import { MyContext } from '../App';
 import { FcGoogle } from "react-icons/fc";
 
-import {app} from '../../firebase/Firebase';
+import {app} from '../Firebase';
 import { getAuth, signInWithPopup, GoogleAuthProvider, sendPasswordResetEmail, confirmPasswordReset } from "firebase/auth";
-import Allert from '../allert/Allert';
+import Allert from "../Components/Allert";
 
 
 export default function LogIn() {

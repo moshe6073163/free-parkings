@@ -5,15 +5,14 @@ import { useContext } from "react";
 import { BiCurrentLocation, BiImageAdd } from "react-icons/bi";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { MyContext } from "../../App";
-import ModalC from '../modalComponnet/ModalC'
-import { location, getCurrLoc } from '../API/APIs';
+import { MyContext } from "../App";
+import ModalC from '../Components/ModalC'
+import { location, getCurrLoc } from '../Components/APIs';
 import { TextField } from "@mui/material";
 import { useGeolocated } from "react-geolocated";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import './PostParking.css'
-import Allert from "../allert/Allert";
+
 
 export default function PostParking() {
 
@@ -170,7 +169,7 @@ export default function PostParking() {
       {currentUser.yourName == undefined ? (
         changeNavigate()
       ) : (
-        <div className="h-auto mb-5 d-flex justify-content-center " >
+        <div className="h-auto mb-5 d-flex justify-content-center ">
           <div className="w-75 bg_postPark border rounded shadow d-flex flex-column justify-content-center">
 
             <div className="row">

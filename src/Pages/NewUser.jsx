@@ -1,12 +1,12 @@
 import React, { useContext, useRef, useState } from 'react';
-import { MyContext } from '../../App';
+import { MyContext } from '../App';
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import { FaTrashAlt } from "react-icons/fa";
 import { getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
-import {app} from '../../firebase/Firebase';
+import {app} from '../Firebase';
 import { FcGoogle } from "react-icons/fc";
-import Allert from '../allert/Allert';
+import Allert from '../Components/Allert';
 
 
 export default function NewUser() {

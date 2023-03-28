@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import { useState } from 'react';
 import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
-import { MyContext } from '../../App';
+import { MyContext } from '../App';
 import { Link } from "react-router-dom";
 import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
 import { collection, onSnapshot, query, where } from "@firebase/firestore";
-import { firestore } from "../../firebase/Firebase";
+import { firestore } from "../Firebase";
 
 export default function Admin() {
 

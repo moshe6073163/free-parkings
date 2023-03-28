@@ -1,3 +1,4 @@
+/* for home page */
 .bg_site {
     /* background-image: url("https://i.imagesup.co/images2/4c52a67c4dce12dcc315c8bf4d4fda2750c579be.jpg"); */
     /* background-repeat: no-repeat; */
@@ -7,18 +8,23 @@
     box-shadow: 2px 2px 12px 2px rgb(164, 210, 244);
 }
 
+
+/* for header components */
 .bg_header {
     background-color: rgba(0, 0, 0, 0.35);
 }
 
+
+/* for login page */
 .bg_login {
     background-color: rgba(85, 169, 184, 0.35);
 }
 
+
+/* for postParking page */
 .bg_postPark {
     background-color: rgba(9, 241, 163, 0.35);
 }
-
 .btn-no-background {
     background-color: transparent;
     background-repeat: no-repeat;
@@ -27,43 +33,14 @@
     overflow: hidden;
     outline: none;
 }
-
-.bgCircle1 {
-    /* background-image: url("https://thumbs.dreamstime.com/z/smartphone-application-online-searching-free-parking-place-map-gps-navigation-parking-concept-smartphone-application-111457034.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background-color: rgba(1, 19, 19, 0.5);
-    box-shadow: 2px 2px 12px 2px rgb(12, 11, 11);
-    transition:ease-out 1s;
-    font-size: 2.5em;
-}
-
-.bgCircle1:hover{
-    transform:scale(1.1 ,1.1);
-    background-color:rgb(41, 136, 136, .4) ;
-    font-size: 3em;
-
-}
-
-.bgCircle2 {
-    /* background-image: url("");
-    background-repeat: no-repeat;
-    background-size: 100% 100%; */
-    background-color: rgba(1, 19, 19, 0.5);
-    box-shadow: 2px 2px 12px 2px rgb(12, 11, 11);
-    transition:ease-out 1s;
-    font-size: 2.5em;
-
-}
-
-.bgCircle2:hover{
-    transform:scale(1.1 ,1.1);
-    background-color:rgb(41, 136, 136, .4) ;
-    font-size: 3em;
-
+.PositionPostParking{
+    position: absolute;
+    z-index: 9999;
+    max-width: 120px;
 }
 
 
+/* for parking page */
 .shareParking{
     position: fixed;
     bottom: 350px;
@@ -72,8 +49,88 @@
 }
 
 
-.PositionPostParking{
+/* for parkings page */
+.cards {
+    background-color: rgba(58, 73, 142, 0.9);
+    transition: ease-out 1s;
+}
+.cards:hover {
+    background-color: rgba(58, 73, 100, 0.5);
+    color: rgb(206, 215, 105);
+    transform: scale(1.05);
+}
+.color-font{
+    color: rgb(206, 215, 105);
+}
+.color-font:hover{
+    color: rgb(206, 215, 105);
+}
+#my-map{
+    display: none;
+    height: 500px;
+    width :  700px;
+    position : relative;
+    margin-left : 30px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+/* for login page */
+:root {
+    --input-padding-x: .75rem;
+    --input-padding-y: .75rem;
+}
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+.form-label-group > input,
+.form-label-group > label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+.form-label-group > label {
     position: absolute;
-    z-index: 9999;
-    max-width: 120px;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0; /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+}
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+}
+.form-label-group input::placeholder {
+    color: transparent;
+}
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+.form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #777;
 }
