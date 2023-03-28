@@ -75,4 +75,5 @@
 .PositionPostParking{
     position: absolute;
     z-index: 9999;
+    max-width: 120px;
 }
