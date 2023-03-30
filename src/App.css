@@ -8,7 +8,9 @@
     box-shadow: 2px 2px 12px 2px rgb(164, 210, 244);
 }
 
-
+img{
+    object-fit: cover;
+}
 /* for header components */
 .bg_header {
     background-color: rgba(0, 0, 0, 0.35);

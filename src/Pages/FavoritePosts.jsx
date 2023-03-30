@@ -24,6 +24,7 @@ export default function FavoritePosts () {
   return (
     <div className='container'>
       <div className="row justify-content-center m-0">
+        <h1 className='d-flex justify-content-center mb-3'>My Favorite</h1>
         <div className="row justify-content-around container rounded">
             {favoritePosts[0] ? favoritePosts.map((post, i) => (
                 <div key={i} className="border cards rounded mb-2" style={{ width: "300px", height: "450px" }}>
@@ -31,7 +32,7 @@ export default function FavoritePosts () {
                         <div className="d-flex justify-content-center mt-3" style={{ height: "65%" }}>
                            <img className="img-card border rounded" src={post.imgUrl} style={{ height: "90%", width: "100%" }}/>
                         </div>
-                        <h4 className=""><b>City: </b>{post.city}</h4>
+                        <h4 className=""><b>City: </b>{post.city.length > 20 ? post.city.substring(0, 15) + "..." : post.city }</h4>
                         <h5 className=""><b>Street: </b>{post.street.length > 20 ? post.street.substring(0, 20) + "..." : post.street }</h5>
                         <h5 className=""><b>Price: </b>{post.price}₪</h5>
                     </Link>
