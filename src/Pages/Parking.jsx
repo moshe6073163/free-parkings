@@ -157,7 +157,7 @@ export default function Parking() {
                 </div>
               </div>
               <div className="" style={{ height: '450px', width: '90%' }} id="my-map"></div>
-              <div className="shareParking">
+              <div className={window.innerWidth > 765 ? "posParking" : "w-100 d-flex justify-content-start"}>
                 <Share />
               </div>
             </ul>

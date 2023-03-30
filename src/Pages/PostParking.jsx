@@ -180,7 +180,7 @@ export default function PostParking() {
               <div className="col-sm-6 col-12 flex-wrap justify-content-center">
 
                 <div className="h3 text-center">Detail</div>
-                <button className="btn btn-primary mb-3 w-sm-25 w-50 mx-5" onClick={e => setAutoLocation(e)}>use in current location <BiCurrentLocation /> </button>
+                <button className="btn btn-primary mb-3 col-sm-6 col-8 mx-5" onClick={e => setAutoLocation(e)}>use in current location <BiCurrentLocation /> </button>
 
                 <div className="row d-flex flex-wrap justify-content-center p-0">
                   <div className="col-5 p-0">
@@ -233,7 +233,7 @@ export default function PostParking() {
                         ?
                         ("")
                         :
-                        (<input required placeholder="Please Enter A Code" onChange={(e) => setKeyCode(e)} type="number" />)}
+                        (<input className="w-100" required placeholder="Please Enter A Code" onChange={(e) => setKeyCode(e)} type="number" />)}
                   </div>
                 </div>
 

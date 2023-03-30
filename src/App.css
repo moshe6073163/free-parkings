@@ -50,6 +50,13 @@ img{
     z-index: 9999;
 }
 
+.posParking{
+    position: fixed;
+    bottom: 350px;
+    left: 30px;
+    z-index: 9999;
+}
+
 
 /* for parkings page */
 .cards {

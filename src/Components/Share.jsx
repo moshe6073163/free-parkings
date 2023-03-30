@@ -7,9 +7,10 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, TelegramShareButton, WhatsappIcon, WhatsappShareButton, } from "react-share";
 
 export default function Share() {
-    return (    
+    return ( 
+        <span className='' >   
     <Box>
-        <SpeedDial sx={{ position: 'absolute', bottom:'50px', left:'150px' }} ariaLabel="SpeedDial basic example" icon={<BsShare /> } >
+        <SpeedDial className=''  ariaLabel="SpeedDial basic example" icon={<BsShare /> } >
             <SpeedDialAction
                 icon={
                     <WhatsappShareButton url={window.location.href} >
@@ -20,6 +21,7 @@ export default function Share() {
             />
         </SpeedDial>
     </Box>
+    </span>
     )
 }
 
