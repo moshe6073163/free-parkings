@@ -67,7 +67,7 @@ export default function MyParking() {
             </div>
 
             <div class="col-sm-7 col-12">
-              <div className='col-9'>
+              <div className='col-11'>
               <p class=" mt-2 display-6 d-flex fw-bold">Price: <p>{current.price}</p>₪
                 {!change ? "" : <div className='d-flex justify-content-end'>
                   <input className='w-50 mt-2' type="number" defaultValue={current.price} ref={price} />
@@ -106,7 +106,7 @@ export default function MyParking() {
                 }
               </p>
 
-              <p class=" mt-2 display-6 d-flex">Detail:<p> {current.detail.substring(0,25) + "..."} </p>
+              <p class=" mt-2 display-6 d-flex">Detail:<p> {current.detail.length > 25 ? current.detail.substring(0,25) + "..." : current.detail} </p>
                 {!change ? "" : <div className='d-flex justify-content-end'>
                 {/* <TextField defaultValue={current.detail} className="w-75 bg-light" required color="warning" label="Parking details" placeholder="Give details about the parking" variant="outlined" multiline rows={7} inputRef={detail} /> */}
                   <textarea variant="outlined" multiline className='w-100 h-100 mt-2' type="textarea" defaultValue={current.detail} ref={detail} />
@@ -114,9 +114,9 @@ export default function MyParking() {
                 }
               </p>
 
-              <p class=" mt-2 display-6 d-flex">Name: <p>{current.contactName}</p>
+              <p class=" mt-2 display-6 d-flex">Name: <p className='w-50'>{current.contactName}</p>
                 {!change ? "" : <div className='d-flex justify-content-end'>
-                  <input className='w-75 mt-2' type="text" defaultValue={current.contactName} ref={name} />
+                  <input className='w-100 mt-2' type="text" defaultValue={current.contactName} ref={name} />
                 </div>
                 }
               </p>

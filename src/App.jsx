@@ -47,6 +47,7 @@ export default function App() {
   const [favoritePosts, setFavoritePosts] = useState([]);
   const [flag, setflag] = useState(true);  
   const [isShowAlert, setIsShowAlert] = useState({set: false});
+  const [activityTime, setActivityTime] = useState([]);
   const navigate = useNavigate();
 
   // function to create new user
@@ -325,6 +326,8 @@ export default function App() {
     favoritePosts,
     setFavoritePosts,
     setIsShowAlert,
+    activityTime,
+    setActivityTime
   };
 
   return (

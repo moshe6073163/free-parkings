@@ -12,11 +12,12 @@ import { TextField } from "@mui/material";
 import { useGeolocated } from "react-geolocated";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import ActivityTime from "../Components/ActivityTime";
 
 
 export default function PostParking() {
 
-  const { currentUser, setStorage, setImage, image, setNewPost, isLoading } = useContext(MyContext);
+  const { currentUser, activityTime, setImage, image, setNewPost, isLoading } = useContext(MyContext);
   const navigate = useNavigate();
 
   const imageRef = useRef();
@@ -30,7 +31,7 @@ export default function PostParking() {
   const [url, setUrl] = useState([]);
   const [code, setCode] = useState();
   const [keyCode, setKeyCode] = useState();
-  const [activityTime, setActivityTime] = useState();
+  const [showActivityTime, setShowActivityTime] = useState(false);
   const [cityInput, setCityInput] = useState([]);
   const [addressInput, setAddressInput] = useState([]);
 
@@ -76,7 +77,7 @@ export default function PostParking() {
       street: addressInput,
       price: price.current.value,
       suitable: suitable.current.value,
-      activityTime: activityTime.target.value,
+      activityTime: activityTime,
       contactName: currentUser.yourName,
       contactPhone: currentUser.phone,
       cordLocation: geo,
@@ -88,7 +89,6 @@ export default function PostParking() {
     code != undefined ? code.target.checked = false : setCode(undefined);
     suitable.current.value = "";
     price.current.value = "";
-    activityTime.target.value = "";
     setImage([]);
     setUrl([]);
   };
@@ -184,7 +184,7 @@ export default function PostParking() {
 
                 <div className="row d-flex flex-wrap justify-content-center p-0">
                   <div className="col-5 p-0">
-                    <TextField required color="warning" id="city" label="City" variant="outlined" className="bg-light col-11 m-2" onChange={(e) => setCityInput(e.target.value)} />
+                    <TextField required color="warning" id="city" label="City" variant="outlined" className="bg-light col-10 rounded m-2" onChange={(e) => setCityInput(e.target.value)} />
                     <div className="PositionPostParking d-flex flex-column align-items-center col-2">{totalCity.map((e, i) => (
                       <div className="col-12 border">{i < 1 ? <button className="col-12 border btn-light" onClick={(e) => setCity(e.target.innerHTML)}>{e.properties.city}</button>
                         :
@@ -195,7 +195,7 @@ export default function PostParking() {
                   </div>
 
                   <div className="col-5 p-0">
-                    <TextField required color="warning" id="street" label="Street" variant="outlined" className="bg-light col-11 m-2" onChange={(e) => setAddressInput(e.target.value)} />
+                    <TextField required color="warning" id="street" label="Street" variant="outlined" className="bg-light rounded col-10 m-2" onChange={(e) => setAddressInput(e.target.value)} />
                     <div className="PositionPostParking d-flex flex-column align-items-center col-2">{totalStreet.map((e, i) => (
                       <div className="col-12 border">{i < 1 ? <button className="w-100 border btn-light" onClick={(e) => setTotalAddress(e.target.innerHTML)}>{e.properties.address_line1}</button>
                         :
@@ -207,14 +207,17 @@ export default function PostParking() {
                 </div>
 
 
-
+                
                 <div className="d-flex flex-wrap m-2 justify-content-center">
-                  <TextField required color="warning" label="Activity time?" placeholder="sun - thurs" variant="outlined" className="bg-light m-2 col-5" onChange={e => setActivityTime(e)} />
-                  <TextField required color="warning" label="suitable for?" placeholder="Car / Trunk / Bike" variant="outlined" className="bg-light m-2 col-5" inputRef={suitable} />
+                {!showActivityTime ? <div className="btn btn-light mt-2 text-primary col-5" onClick={()=>setShowActivityTime(!showActivityTime)}>Set activity time</div> : 
+                  <div className="border posActivityTime rounded mt-2 "><ActivityTime show={setShowActivityTime}/></div>
+                    }
+                  {/* <TextField required color="warning" label="Activity time?" placeholder="sun - thurs" variant="outlined" className="bg-light m-2 col-5" onChange={e => setActivityTime(e)} /> */}
+                  <TextField required color="warning" label="suitable for?" placeholder="Car / Trunk / Bike" variant="outlined" className="bg-light rounded m-2 col-5" inputRef={suitable} />
                 </div>
 
                 <div className="d-flex flex-wrap m-2 justify-content-center">
-                  <TextField required color="warning" label="Please Enter Price:" placeholder="Price For Hour" variant="outlined" className="bg-light m-2 col-5" inputRef={price} />
+                  <TextField required color="warning" label="Please Enter Price:" placeholder="Price For Hour" variant="outlined" className="bg-light rounded m-2 col-5" inputRef={price} />
                   {/* <TextField required color="warning" label="Please Enter Price:" placeholder="Price For Hour" variant="outlined" className="bg-light m-2 col-5" inputRef={price}/> */}
                 </div>
 
@@ -233,12 +236,12 @@ export default function PostParking() {
                         ?
                         ("")
                         :
-                        (<input className="w-100" required placeholder="Please Enter A Code" onChange={(e) => setKeyCode(e)} type="number" />)}
+                        (<input className="w-100 rounded" required placeholder="Please Enter A Code" onChange={(e) => setKeyCode(e)} type="number" />)}
                   </div>
                 </div>
 
                 <div className="w-100 m-3 d-flex justify-content-center">
-                  <TextField className="w-75 bg-light" required color="warning" label="Parking details" placeholder="Give details about the parking" variant="outlined" multiline rows={7} inputRef={detail} />
+                  <TextField className="w-75 bg-light rounded" required color="warning" label="Parking details" placeholder="Give details about the parking" variant="outlined" multiline rows={7} inputRef={detail} />
                 </div>
               </div>
 

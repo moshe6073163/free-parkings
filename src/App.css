@@ -41,6 +41,12 @@ img{
     max-width: 120px;
 }
 
+.posActivityTime{
+    position: absolute;
+    z-index: 9999;
+    background-color: #1183f5;
+}
+
 
 /* for parking page */
 .shareParking{

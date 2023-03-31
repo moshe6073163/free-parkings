@@ -127,7 +127,7 @@ export default function Parking() {
             <ul class="col-md-6 list-unstyled fs-5"> <h2>Parking Detail:</h2>
               <li class="text-primary"><b>city: </b>{current.city}</li>
               <li class="text-primary"><b>street: </b>{current.street}</li>
-              <li class="text-primary"><b>Activity time: </b>{current.activityTime}</li>
+              <li class="text-primary"><b>Activity time: </b>{current.activityTime.map((e)=>(e.start + "," + e.end))}</li>
               <li class="text-primary"><b>price: ₪</b>{current.price}</li>
               <li class="text-primary"><b>accessibility: </b>{current.accessibility == true ? "yes" : "no"}</li>
               <li class="text-primary"><b>Have a Code?: </b>{current.code == true ? "yes" : "no"}</li>
