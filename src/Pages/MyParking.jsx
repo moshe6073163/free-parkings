@@ -81,9 +81,7 @@ export default function MyParking() {
               </p>
 
               <p class="col-10 mt-2 display-6 d-flex flex-wrap justify-content-center">Activity Time: <p><ActivityTime parking={true} activityTime={current.activityTime}/></p>
-                {!change ? "" : <div className='col-12'>
-                <ActivityTime  /></div>
-                }
+                {!change ? "" : <div className='col-12'><ActivityTime  /></div>}
               </p>
               <p class=" mt-2 display-6 d-flex">Suitable: <p>{current.suitable}</p>
                 {!change ? "" : <div className='d-flex justify-content-end'>

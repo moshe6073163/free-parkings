@@ -70,28 +70,27 @@ export default function ActivityTime(props) {
           <div className='m-2 w-sm-75 d-flex justify-content-end' >Friday: <input className='col-4 mx-1' type="time" defaultValue={activityTime[5] ? activityTime[5].start : ""} ref={startFri} /><input className='col-4 mx-1' type="time" defaultValue={activityTime[5] ? activityTime[5].end : ""} ref={endFri} /></div>
           <div className='m-2 w-sm-75 d-flex justify-content-end' >Saturday: <input className='col-4 mx-1' type="time" defaultValue={activityTime[6] ? activityTime[6].start : ""} ref={startSat} /><input className='col-4 mx-1' type="time" defaultValue={activityTime[6] ? activityTime[6].end : ""} ref={endSat} /></div>
           <div className='btn btn-light w-25 mt-2 mb-2' onClick={setActive}>Set</div>
-        </div> :
+        </div> 
+        :
         <div className='row d-flex justify-content-center'>
-         
-            <div>
-              <table className='border bg-secondary text-light rounded'>
+          <div>
+            <table className='border bg-secondary text-light rounded'>
               <tr className='border'>
-                  <th className='border'>Day</th>
-                  <th className='border'>Start</th>
-                  <th className='border'>End</th>
+                <th className='border'>Day</th>
+                <th className='border'>Start</th>
+                <th className='border'>End</th>
+              </tr>
+              {props.activityTime.map((e, i) => (e.start !== "" ? 
+                <tr className='border'>
+                  <th className='border'>{nameDays[i]}</th>
+                  <th className='border'>{e.start}</th>
+                  <th className='border'>{e.end}</th>
                 </tr>
-              {props.activityTime.map((e, i) => (
-               e.start !== "" ? 
-               <tr className='border'>
-               <th className='border'>{nameDays[i]}</th>
-               <th className='border'>{e.start}</th>
-               <th className='border'>{e.end}</th>
-             </tr>
-              :
-            ""
-          ))}
-           </table>
-            </div>
+                :
+                ""
+              ))}
+            </table>
+          </div>
         </div>
       }
     </>
