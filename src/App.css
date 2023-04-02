@@ -43,7 +43,7 @@ img{
 
 .posActivityTime{
     position: absolute;
-    z-index: 9999;
+    z-index: 1111;
     background-color: #1183f5;
 }
 

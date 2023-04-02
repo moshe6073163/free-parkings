@@ -4,6 +4,7 @@ import { MyContext } from '../App';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { TextField } from '@mui/joy';
+import ActivityTime from '../Components/ActivityTime';
 
 
 export default function MyParking() {
@@ -16,14 +17,18 @@ export default function MyParking() {
   const phone = useRef();
   const code = useRef();
   const keyCode = useRef();
-  const activityTime = useRef();
 
   const { id } = useParams();
-  const { posts, postDelete, updatePost } = useContext(MyContext);
+  const { posts, postDelete, updatePost, setActivityTime, activityTime } = useContext(MyContext);
   const navigate = useNavigate();
   const [change, setChange] = useState(false);
+  const [current, setCurrent] = useState(posts.find((post) => post.id == id))
 
-  const current = posts.find((post) => post.id == id);
+  useEffect(()=>{
+    if(current){
+      setActivityTime(current.activityTime)
+    }
+  },[current])
 
   function deletePost(id, nameFile) {
     postDelete(id, nameFile);
@@ -41,7 +46,7 @@ export default function MyParking() {
       street: current.street,
       price: price.current.value,
       suitable: suitable.current.value,
-      activityTime: activityTime.current.value,
+      activityTime: activityTime,
       contactName: name.current.value,
       contactPhone: phone.current.value,
       cordLocation: current.cordLocation,
@@ -66,8 +71,8 @@ export default function MyParking() {
               </Carousel>
             </div>
 
-            <div class="col-sm-7 col-12">
-              <div className='col-11'>
+            <div class="col-sm-11 col-md-7 col-12">
+              <div className='col-12 d-flex flex-column align-items-center'>
               <p class=" mt-2 display-6 d-flex fw-bold">Price: <p>{current.price}</p>₪
                 {!change ? "" : <div className='d-flex justify-content-end'>
                   <input className='w-50 mt-2' type="number" defaultValue={current.price} ref={price} />
@@ -75,13 +80,11 @@ export default function MyParking() {
                 }
               </p>
 
-              <p class=" mt-2 display-6 d-flex">Activity Time: <p>{current.activityTime}</p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
-                  <input className='w-50 mt-2' defaultValue={current.activityTime} type="text" ref={activityTime} />
-                </div>
+              <p class="col-10 mt-2 display-6 d-flex flex-wrap justify-content-center">Activity Time: <p><ActivityTime parking={true} activityTime={current.activityTime}/></p>
+                {!change ? "" : <div className='col-12'>
+                <ActivityTime  /></div>
                 }
               </p>
-
               <p class=" mt-2 display-6 d-flex">Suitable: <p>{current.suitable}</p>
                 {!change ? "" : <div className='d-flex justify-content-end'>
                   <input className='w-50 mt-2' defaultValue={current.suitable} type="text" ref={suitable} />
@@ -109,20 +112,20 @@ export default function MyParking() {
               <p class=" mt-2 display-6 d-flex">Detail:<p> {current.detail.length > 25 ? current.detail.substring(0,25) + "..." : current.detail} </p>
                 {!change ? "" : <div className='d-flex justify-content-end'>
                 {/* <TextField defaultValue={current.detail} className="w-75 bg-light" required color="warning" label="Parking details" placeholder="Give details about the parking" variant="outlined" multiline rows={7} inputRef={detail} /> */}
-                  <textarea variant="outlined" multiline className='w-100 h-100 mt-2' type="textarea" defaultValue={current.detail} ref={detail} />
+                  <textarea variant="outlined" multiline className='w-75 h-100 mt-2' type="textarea" defaultValue={current.detail} ref={detail} />
                 </div>
                 }
               </p>
 
               <p class=" mt-2 display-6 d-flex">Name: <p className='w-50'>{current.contactName}</p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
+                {!change ? "" : <div className='d-flex w-100 justify-content-end'>
                   <input className='w-100 mt-2' type="text" defaultValue={current.contactName} ref={name} />
                 </div>
                 }
               </p>
 
               <p class=" mt-2 display-6 d-flex">Phone: <p>{current.contactPhone}</p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
+                {!change ? "" : <div className='d-flex w-100 justify-content-end'>
                   <input className='w-75 mt-2' type="text" defaultValue={current.contactPhone} ref={phone} />
                 </div>
                 }
@@ -133,7 +136,7 @@ export default function MyParking() {
           {!change ? "" :
           <div className='btn btn-primary mx-1' onClick={(e) => postUpdate(current)}>Save</div>
           }
-          <div class="mt-5">
+          <div class="mt-5 mb-3">
             <div className='btn btn-danger mx-3' onClick={() => deletePost(id, current.nameFile)}>Delete Post</div>
             <div className='btn btn-primary' onClick={() => setChange(!change)}>Edit Post</div>
           </div>

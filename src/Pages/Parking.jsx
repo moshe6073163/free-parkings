@@ -9,6 +9,7 @@ import { Carousel } from "react-responsive-carousel";
 import Share from "../Components/Share"
 import { MdCall } from "react-icons/md";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, TelegramShareButton, WhatsappIcon, WhatsappShareButton, } from "react-share";
+import ActivityTime from "../Components/ActivityTime";
 
 
 const myAPIKey = "7aeea4fe26fa4c258c13fb720430df95";
@@ -127,7 +128,7 @@ export default function Parking() {
             <ul class="col-md-6 list-unstyled fs-5"> <h2>Parking Detail:</h2>
               <li class="text-primary"><b>city: </b>{current.city}</li>
               <li class="text-primary"><b>street: </b>{current.street}</li>
-              <li class="text-primary"><b>Activity time: </b>{current.activityTime.map((e)=>(e.start + "," + e.end))}</li>
+              <li class="text-primary"><b>Activity time: </b><ActivityTime parking={true} activityTime={current.activityTime}/></li>
               <li class="text-primary"><b>price: ₪</b>{current.price}</li>
               <li class="text-primary"><b>accessibility: </b>{current.accessibility == true ? "yes" : "no"}</li>
               <li class="text-primary"><b>Have a Code?: </b>{current.code == true ? "yes" : "no"}</li>
@@ -147,9 +148,9 @@ export default function Parking() {
                 <div class="col-5 d-flex justify-content-between">
                   <button class="btn btn-primary btn-lg mb-2 " style={{ height: '48px' }} onClick={() => hideContact()}>contact</button>
                   {hide ?
-                    <div className={'mx-4 d-flex flex-column align-items-center bg-secondary border rounded mt-5 mx-0'} style={{ position: "absolute", zIndex: "9999" }}>
+                    <div className={' d-flex flex-column align-items-center '} style={{  }}>
                       <img className="" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" style={{ width: "90px", height: "90px" }} />
-                      <div className="d-flex justify-content-center mb-2">Name: {current.contactName}</div>
+                      <div className="d-flex flex-wrap justify-content-center mb-2">Name: <p>{current.contactName}</p></div>
                       <div ><a href={`tel:${current.contactPhone}`}><MdCall className="bg-light rounded-circle mb-3 p-0 mt-0" size={48} /></a></div>
                       <a href={`https://api.whatsapp.com/send?phone=972${current.contactPhone.substring(1)}&text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%92%D7%99%D7%A2%20%D7%93%D7%A8%D7%9A%20Free%20Parkings%2C%0A%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%94.`}><WhatsappIcon round={true} size={50} /></a>
                     </div>

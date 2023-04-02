@@ -17,7 +17,7 @@ import ActivityTime from "../Components/ActivityTime";
 
 export default function PostParking() {
 
-  const { currentUser, activityTime, setImage, image, setNewPost, isLoading } = useContext(MyContext);
+  const { currentUser, setActivityTime, activityTime, setImage, image, setNewPost, isLoading } = useContext(MyContext);
   const navigate = useNavigate();
 
   const imageRef = useRef();
@@ -48,6 +48,7 @@ export default function PostParking() {
   useEffect(() => {
     if (currentUser.yourName == undefined)
       changeNavigate();
+    setActivityTime([]);
   }, []);
   
 
@@ -77,7 +78,7 @@ export default function PostParking() {
       street: addressInput,
       price: price.current.value,
       suitable: suitable.current.value,
-      activityTime: activityTime,
+      activityTime: activityTime ? activityTime : [],
       contactName: currentUser.yourName,
       contactPhone: currentUser.phone,
       cordLocation: geo,
@@ -147,9 +148,7 @@ export default function PostParking() {
     const t = document.getElementById('street');
     if (currLoc) {
       const t = document.getElementById('street');
-      console.log(t);
       t.value = currLoc.address_line1;
-      console.log(t.value);
       setAddressInput(t.value);
       const v = document.getElementById('city');
       v.value = currLoc.city;
@@ -169,7 +168,7 @@ export default function PostParking() {
         changeNavigate()
       ) : (
         <div className="h-auto mb-5 d-flex justify-content-center ">
-          <div className="w-75 bg_postPark border rounded shadow d-flex flex-column justify-content-center">
+          <div className="col-sm-7 col-9 bg_postPark border rounded shadow d-flex flex-column justify-content-center">
 
             <div className="row">
               <div className="col-12 h1 text-center">Post A Park</div>
@@ -177,26 +176,28 @@ export default function PostParking() {
 
             <form className="row justify-content-around " onSubmit={submitPost}>
 
-              <div className="col-sm-6 col-12 flex-wrap justify-content-center">
+              <div className="col-sm-7 col-12 flex-wrap justify-content-center">
 
                 <div className="h3 text-center">Detail</div>
-                <button className="btn btn-primary mb-3 col-sm-6 col-8 mx-5" onClick={e => setAutoLocation(e)}>use in current location <BiCurrentLocation /> </button>
 
                 <div className="row d-flex flex-wrap justify-content-center p-0">
-                  <div className="col-5 p-0">
+                  <div className="col-5 p-0 ">
                     <TextField required color="warning" id="city" label="City" variant="outlined" className="bg-light col-10 rounded m-2" onChange={(e) => setCityInput(e.target.value)} />
-                    <div className="PositionPostParking d-flex flex-column align-items-center col-2">{totalCity.map((e, i) => (
-                      <div className="col-12 border">{i < 1 ? <button className="col-12 border btn-light" onClick={(e) => setCity(e.target.innerHTML)}>{e.properties.city}</button>
-                        :
+                    <div className="PositionPostParking bg-light  rounded d-flex flex-column align-items-center col-5">
+                      {totalCity.map((e, i) => (
+                      <div className="col-12 rounded">{i < 1 ? <div> 
+                      <button className="col-12 border bg-primary rounded" onClick={e => setAutoLocation(e)}>My location <BiCurrentLocation /> </button>
+                      <button className="col-12 border rounded" onClick={(e) => setCity(e.target.innerHTML)}>{e.properties.city}</button>
+                      </div>  :
                         totalCity[i].properties.city == totalCity[i - 1].properties.city || !totalCity[i].properties.city ? ""
                         :
-                        <button className="col-12 border btn-light" onClick={(e) => setCity(e.target.innerHTML)}>{totalCity[i].properties.city}</button>}</div>))}
+                        <button className="col-12 border rounded" onClick={(e) => setCity(e.target.innerHTML)}>{totalCity[i].properties.city}</button>}</div>))}
                     </div>
                   </div>
 
                   <div className="col-5 p-0">
                     <TextField required color="warning" id="street" label="Street" variant="outlined" className="bg-light rounded col-10 m-2" onChange={(e) => setAddressInput(e.target.value)} />
-                    <div className="PositionPostParking d-flex flex-column align-items-center col-2">{totalStreet.map((e, i) => (
+                    <div className="PositionPostParking d-flex flex-column align-items-center col-5">{totalStreet.map((e, i) => (
                       <div className="col-12 border">{i < 1 ? <button className="w-100 border btn-light" onClick={(e) => setTotalAddress(e.target.innerHTML)}>{e.properties.address_line1}</button>
                         :
                         totalStreet[i].properties.address_line1 == totalStreet[i - 1].properties.address_line1 ? ""
@@ -209,8 +210,8 @@ export default function PostParking() {
 
                 
                 <div className="d-flex flex-wrap m-2 justify-content-center">
-                {!showActivityTime ? <div className="btn btn-light mt-2 text-primary col-5" onClick={()=>setShowActivityTime(!showActivityTime)}>Activity time</div> : 
-                  <div className="border posActivityTime rounded mt-2 col-sm-4 d-flex flex-wrap  justify-content-center"><ActivityTime show={setShowActivityTime}/></div>
+                {!showActivityTime ? <div style={{height:'56px'}} className="btn btn-light mt-2 text-primary col-5" onClick={()=>setShowActivityTime(!showActivityTime)}>Activity time</div> : 
+                  <div className="border posActivityTime rounded mt-2 col-sm-6 col-md-4 col-9 d-flex flex-wrap justify-content-center"><ActivityTime show={setShowActivityTime}/></div>
                     }
                   {/* <TextField required color="warning" label="Activity time?" placeholder="sun - thurs" variant="outlined" className="bg-light m-2 col-5" onChange={e => setActivityTime(e)} /> */}
                   <TextField required color="warning" label="suitable for?" placeholder="Car / Trunk / Bike" variant="outlined" className="bg-light rounded m-2 col-5" inputRef={suitable} />
@@ -221,7 +222,7 @@ export default function PostParking() {
                   {/* <TextField required color="warning" label="Please Enter Price:" placeholder="Price For Hour" variant="outlined" className="bg-light m-2 col-5" inputRef={price}/> */}
                 </div>
 
-                <div className="d-flex flex-wrap m-2 justify-content-center">
+                <div className="d-flex flex-wrap m-2 justify-content-around">
                   <div className="col-5">
                     <label className=" form-label" for="form3Example4c">accessibility ?</label>
                     <input type="checkbox" ref={accessibility} className="m-2" />
