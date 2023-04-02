@@ -71,70 +71,107 @@ export default function MyParking() {
               </Carousel>
             </div>
 
-            <div class="col-sm-11 col-md-7 col-12">
-              <div className='col-12 d-flex flex-column align-items-center'>
-              <p class=" mt-2 display-6 d-flex fw-bold">Price: <p>{current.price}</p>₪
-                {!change ? "" : <div className='d-flex justify-content-end'>
-                  <input className='w-50 mt-2' type="number" defaultValue={current.price} ref={price} />
-                </div>
-                }
-              </p>
+            <div class="col-sm-11 col-md-7 col-12">             
+              <div className='col-12'>
 
-              <p class="col-10 mt-2 display-6 d-flex flex-wrap justify-content-center">Activity Time: <p><ActivityTime parking={true} activityTime={current.activityTime}/></p>
-                {!change ? "" : <div className='col-12'><ActivityTime  /></div>}
-              </p>
-              <p class=" mt-2 display-6 d-flex">Suitable: <p>{current.suitable}</p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
-                  <input className='w-50 mt-2' defaultValue={current.suitable} type="text" ref={suitable} />
+                <div class="fw-bold fs-4 mb-4">Name: 
+                  <span className='fs-6'>
+                    {" " + current.contactName}
+                  </span>
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <input className='w-50 mt-2' type="text" defaultValue={current.contactName} ref={name} />
+                  </div>}
                 </div>
-                }
-              </p>
 
-              <p class=" mt-2 display-6 d-flex">Accessibility: <p>{current.accessibility  ? "Yes" : "No"}</p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
-                  <input className=' mt-2' type="checkbox" defaultChecked={current.accessibility} ref={accessibility} />
+                <div class="fw-bold fs-4 mb-4">Phone:
+                  <span className='fs-6'>
+                    {" " + current.contactPhone}
+                  </span>
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <input className='w-50 mt-2' type="text" defaultValue={current.contactPhone} ref={phone} />
+                  </div>}
                 </div>
-                }
-              </p>
+                
+                <div class="fw-bold fs-4 mb-4">Price: 
+                  <span className='fs-6'>
+                    {" " + current.price}
+                  </span>₪
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <input className='w-50 mt-2' type="number" defaultValue={current.price} ref={price} />
+                  </div>}
+                </div>     
+                
+                <div class="fw-bold fs-4 mb-4">Suitable: 
+                  <span className='fs-6'>
+                    {" " + current.suitable}
+                  </span>
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <input className='w-50 mt-2' defaultValue={current.suitable} type="text" ref={suitable} />
+                  </div>}
+                </div>
 
-              <p class=" mt-2 display-6 d-flex">Code: <p>{current.code ? "Yes" : "No"}</p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
-                  <input className=' mt-2' type="checkbox" onClick={()=> current.code = !current.code} defaultChecked={current.code} ref={code} />
-                  {!current.code ? <input className='w-50 mt-2' type="text" ref={keyCode} /> : <input className='w-50 mt-2' type="text" defaultValue={current.keyCode} ref={keyCode}/>}
-                  
-                  {/* {!current.code ? "" : <div>{current.keyCode}</div>} */}
+                <div class="fw-bold fs-4 mb-4">Code: 
+                  <span className='fs-6'>
+                    {" " + current.code ? " Yes" : " No"}
+                  </span>
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <input className='mt-2 d-block' type="checkbox" onClick={()=> current.code = !current.code} defaultChecked={current.code} ref={code} />
+                    {!current.code ? <input className='w-50 mt-2' type="text" ref={keyCode} /> : <input className='w-50 mt-2' type="text" defaultValue={current.keyCode} ref={keyCode}/>}
+                  </div>
+                  }
                 </div>
-                }
-              </p>
 
-              <p class=" mt-2 display-6 d-flex">Detail:<p> {current.detail.length > 25 ? current.detail.substring(0,25) + "..." : current.detail} </p>
-                {!change ? "" : <div className='d-flex justify-content-end'>
-                {/* <TextField defaultValue={current.detail} className="w-75 bg-light" required color="warning" label="Parking details" placeholder="Give details about the parking" variant="outlined" multiline rows={7} inputRef={detail} /> */}
-                  <textarea variant="outlined" multiline className='w-75 h-100 mt-2' type="textarea" defaultValue={current.detail} ref={detail} />
+                <div class="fw-bold fs-4 mb-4">Accessibility: 
+                  <span className='fs-6'>
+                    {" " + current.accessibility  ? " Yes" : " No"}
+                  </span>
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <input className='mt-2' type="checkbox" defaultChecked={current.accessibility} ref={accessibility} />
+                  </div>}
                 </div>
-                }
-              </p>
 
-              <p class=" mt-2 display-6 d-flex">Name: <p className='w-50'>{current.contactName}</p>
-                {!change ? "" : <div className='d-flex w-100 justify-content-end'>
-                  <input className='w-100 mt-2' type="text" defaultValue={current.contactName} ref={name} />
+                <div class="fw-bold fs-4 mb-4">Detail:
+                  <span className='fs-6'> 
+                    {current.detail.length > 25 ? " " + current.detail.substring(0,40) + "..." : " " + current.detail} 
+                  </span>
+                  {!change ? "" 
+                  : 
+                  <div className=''>
+                    <textarea variant="outlined" multiline className='w-50 mt-2' type="textarea" defaultValue={current.detail} ref={detail} />
+                  </div>}
                 </div>
-                }
-              </p>
 
-              <p class=" mt-2 display-6 d-flex">Phone: <p>{current.contactPhone}</p>
-                {!change ? "" : <div className='d-flex w-100 justify-content-end'>
-                  <input className='w-75 mt-2' type="text" defaultValue={current.contactPhone} ref={phone} />
+                <div class="fw-bold mb-4">Activity Time: 
+                  <ActivityTime parking={true} activityTime={current.activityTime}/>
+                  {!change ? "" 
+                  : 
+                  <div className='w-75 bg-secondary'>
+                    <ActivityTime />
+                  </div>}
                 </div>
-                }
-              </p>
+
               </div>
             </div>
           </div>
           {!change ? "" :
-          <div className='btn btn-primary mx-1' onClick={(e) => postUpdate(current)}>Save</div>
+          <div className='d-flex justify-content-center'>
+             <div className='btn btn-primary mx-1 d-flex justify-content-center' onClick={(e) => postUpdate(current)}>Save</div>
+
+          </div>
           }
-          <div class="mt-5 mb-3">
+          <div class="d-flex justify-content-center m-3">
             <div className='btn btn-danger mx-3' onClick={() => deletePost(id, current.nameFile)}>Delete Post</div>
             <div className='btn btn-primary' onClick={() => setChange(!change)}>Edit Post</div>
           </div>
