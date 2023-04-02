@@ -125,7 +125,7 @@ export default function Parking() {
                 ))}
               </Carousel>
             </div>
-            <ul class="col-md-6 list-unstyled fs-5"> <h2>Parking Detail:</h2>
+            <ul class="col-md-6 d-flex flex-sm-wrap flex-column align-items-sm-start align-items-center list-unstyled fs-5"> <h2>Parking Detail:</h2>
               <li class="text-primary"><b>city: </b>{current.city}</li>
               <li class="text-primary"><b>street: </b>{current.street}</li>
               <li class="text-primary"><b>Activity time: </b><ActivityTime parking={true} activityTime={current.activityTime}/></li>
