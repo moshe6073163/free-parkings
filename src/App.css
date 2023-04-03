@@ -1,19 +1,27 @@
 /* for home page */
 .bg_site {
-    /* background-image: url("https://i.imagesup.co/images2/4c52a67c4dce12dcc315c8bf4d4fda2750c579be.jpg"); */
-    /* background-repeat: no-repeat; */
+    background-image: url("https://parking-pal.netlify.app/static/media/background.f0b4ffbe30df9b2f4171.jpeg");
+    /* background-repeat: repeat; */
     /* background-size: cover; */
     font-style:italic;
-    background-color: rgb(114, 192, 247);
-    box-shadow: 2px 2px 12px 2px rgb(164, 210, 244);
+    /* background-color: rgb(114, 192, 247); */
+    /* box-shadow: 2px 2px 12px 2px rgb(164, 210, 244); */
 }
 
 img{
     object-fit: cover;
 }
+
+
 /* for header components */
 .bg_header {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(90, 105, 124, 0.4);
+}
+
+
+/* for footer components */
+.bg_footer {
+    background-color: rgba(90, 105, 124, 0.7);
 }
 
 
@@ -25,7 +33,7 @@ img{
 
 /* for postParking page */
 .bg_postPark {
-    background-color: rgba(9, 241, 163, 0.35);
+    background-color: rgba(90, 105, 124, 0.7);
 }
 .btn-no-background {
     background-color: transparent;
@@ -44,7 +52,6 @@ img{
 .posActivityTime{
     position: absolute;
     z-index: 1111;
-    background-color: #1183f5;
 }
 
 
@@ -66,11 +73,11 @@ img{
 
 /* for parkings page */
 .cards {
-    background-color: rgba(58, 73, 142, 0.9);
+    background-color: rgba(58, 73, 100, 0.5);
     transition: ease-out 1s;
 }
 .cards:hover {
-    background-color: rgba(58, 73, 100, 0.5);
+    background-color: rgba(100, 99, 58, 0.8);
     color: rgb(206, 215, 105);
     transform: scale(1.05);
 }

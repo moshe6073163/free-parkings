@@ -39,10 +39,10 @@ export default function Header() {
         <li>
           <Link to={"/"}>
             <img
-              className="rounded-circle mt-1 mb-1"
-              src="https://images.template.net/85586/free-car-parking-illustration-ql7jz.jpg"
+              className="m-0 p-0"
+              src="https://i.imagesup.co/images2/7170c294d32fca31bbad8c78ee138faf2d11f0c4.png"
               width="100px"
-              height="70px"
+              height="80px"
             />
           </Link>
         </li>

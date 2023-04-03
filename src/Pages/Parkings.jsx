@@ -90,7 +90,7 @@ export default function Parkings() {
   <div className="container h-auto"> 
   <div className="d-flex justify-content-between mb-4" >
     <input id="search" className="w-50 rounded mx-3" type="search" placeholder="Search City" onChange={(e) => postInput(e.target.value)}/>
-    <button className="btn btn-primary mx-4 d-flex " onClick={(e)=>setMaps(e)}><div>Live Map</div> 
+    <button className="btn mx-4 d-flex" style={{backgroundColor: "rgba(216, 213, 111, 0.8"}} onClick={(e)=>setMaps(e)}><div>Live Map</div> 
       <lord-icon
         src="https://cdn.lordicon.com/oaflahpk.json"
         trigger="hover"
@@ -101,7 +101,7 @@ export default function Parkings() {
   </div>
 
   {!map ? "" :
-    <div className="row d-flex justify-content-center "> 
+    <div className="row d-flex justify-content-center"> 
     <MapContainer className="mb-3 mx-3 rounded col-sm-11 col-10 " id="my" center={[cordUser.latitude , cordUser.longitude]} style={{ height:'500px'}} zoom={13} scrollWheelZoom={true}>
       <TileLayer 
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -132,7 +132,7 @@ export default function Parkings() {
           <div className="d-flex justify-content-center mt-3" style={{ height: "65%" }}>
               <img className="img-card border rounded" src={item.imgUrl} style={{ height: "90%", width: "100%" }}/>
           </div>
-          <h5 className=""><b>City: </b>{item.city}</h5>
+          <h5 className=""><b>City: </b>{item.city.length > 20 ? item.city.substring(0, 20) + "..." : item.city}</h5>
           <h5 className=""><b>Street: </b>{item.street.length > 20 ? item.street.substring(0, 20) + "..." : item.street }</h5>
           <h5 className=""><b>Price: </b>{item.price}₪</h5>
           </Link>

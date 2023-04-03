@@ -212,7 +212,7 @@ export default function PostParking() {
                 <div className="d-flex flex-wrap m-2 justify-content-center">
                   {!showActivityTime ? <div style={{height:'56px'}} className="btn btn-light mt-2 text-primary col-5" onClick={()=>setShowActivityTime(!showActivityTime)}>Activity time</div> 
                   : 
-                  <div className="border posActivityTime rounded mt-2 col-sm-6 col-md-4 col-9 d-flex flex-wrap justify-content-center"><ActivityTime show={setShowActivityTime}/></div>
+                  <div className=" posActivityTime rounded mt-2 col-sm-6 col-md-4 col-11 d-flex flex-wrap justify-content-center"><ActivityTime show={setShowActivityTime}/></div>
                   }
                   <TextField required color="warning" label="suitable for?" placeholder="Car / Trunk / Bike" variant="outlined" className="bg-light rounded m-2 col-5" inputRef={suitable} />
                 </div>

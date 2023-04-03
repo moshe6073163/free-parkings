@@ -61,7 +61,7 @@ export default function ActivityTime(props) {
   return (
     <>
       {!props.parking ?
-        <div className='row d-flex flex-column align-items-center'>
+        <div className='row d-flex flex-column align-items-center border rounded shadow-lg' style={{backgroundColor: "rgba(5, 202, 237, 0.90)"}}>
           <div className='m-2 w-sm-75 d-flex justify-content-end' >Sunday: <input className='col-4 mx-1' defaultValue={activityTime[0] ? activityTime[0].start : ""} type="time" ref={startSun} /><input className='col-4 mx-1' type="time" defaultValue={activityTime[0] ? activityTime[0].end : ""} ref={endSun} /></div>
           <div className='m-2 w-sm-75 d-flex justify-content-end' >Monday: <input className='col-4 mx-1' type="time" defaultValue={activityTime[1] ? activityTime[1].start : ""} ref={startMon} /><input className='col-4 mx-1' type="time" defaultValue={activityTime[1] ? activityTime[1].end : ""} ref={endMon} /></div>
           <div className='m-2 w-sm-75 d-flex justify-content-end' >Tuesday: <input className='col-4 mx-1' type="time" defaultValue={activityTime[2] ? activityTime[2].start : ""} ref={startTues} /><input className='col-4 mx-1' type="time" defaultValue={activityTime[2] ? activityTime[2].end : ""} ref={endTues} /></div>
@@ -72,9 +72,9 @@ export default function ActivityTime(props) {
           <div className='btn btn-light w-25 mt-2 mb-2' onClick={setActive}>Set</div>
         </div> 
         :
-        <div className='row d-flex justify-content-center'>
+        <div className='row d-flex justify-content-center' >
           <div>
-            <table className='border bg-secondary text-light rounded'>
+            <table className='border text-light rounded' style={{backgroundColor: "rgba(2, 192, 147, 0.90)"}}>
               <tr className='border'>
                 <th className='border'>Day</th>
                 <th className='border'>Start</th>

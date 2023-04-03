@@ -144,12 +144,12 @@ export default function MyParking() {
 
                 <div class="fw-bold fs-4 mb-4">Detail:
                   <span className='fs-6'> 
-                    {current.detail.length > 25 ? " " + current.detail.substring(0,40) + "..." : " " + current.detail} 
+                    {current.detail.length > 25 ? " " + current.detail.substring(0,25) + "..." : " " + current.detail} 
                   </span>
                   {!change ? "" 
                   : 
                   <div className=''>
-                    <textarea variant="outlined" multiline className='w-50 mt-2' type="textarea" defaultValue={current.detail} ref={detail} />
+                    <textarea variant="outlined" multiline className='w-50 mt-2' type="textarea" rows={5} defaultValue={current.detail} ref={detail} />
                   </div>}
                 </div>
 
@@ -157,7 +157,7 @@ export default function MyParking() {
                   <ActivityTime parking={true} activityTime={current.activityTime}/>
                   {!change ? "" 
                   : 
-                  <div className='w-75 bg-secondary'>
+                  <div className=' mt-2 mx-2 col-sm-10  col-11 d-flex justify-content-start '>
                     <ActivityTime />
                   </div>}
                 </div>
