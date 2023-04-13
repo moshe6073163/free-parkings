@@ -22,13 +22,18 @@ export default function MyParking() {
   const { posts, postDelete, updatePost, setActivityTime, activityTime } = useContext(MyContext);
   const navigate = useNavigate();
   const [change, setChange] = useState(false);
-  const [current, setCurrent] = useState(posts.find((post) => post.id == id))
+  const [current, setCurrent] = useState()
 
   useEffect(()=>{
     if(current){
       setActivityTime(current.activityTime)
     }
   },[current])
+
+  useEffect(()=>{
+    if(posts[0])
+    setCurrent(posts.find((post) => post.id === id));
+  },[posts]) 
 
   function deletePost(id, nameFile) {
     postDelete(id, nameFile);
@@ -59,8 +64,8 @@ export default function MyParking() {
 
   return (
     <>
-      {!current ? "" :
-        <div class="container mt-5">
+      {current ?
+        <div class="container mt-5"> {}
           <div class="row">
             <h1>{current.city + ', ' + current.street}</h1>
             <div class="col-md-5">
@@ -175,7 +180,7 @@ export default function MyParking() {
             <div className='btn btn-danger mx-3' onClick={() => deletePost(id, current.nameFile)}>Delete Post</div>
             <div className='btn btn-primary' onClick={() => setChange(!change)}>Edit Post</div>
           </div>
-        </div>}
+        </div> : ""}
     </>
   )
 }

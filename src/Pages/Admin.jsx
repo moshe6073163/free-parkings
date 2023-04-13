@@ -23,9 +23,16 @@ export default function Admin() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    setOtherCurrUser(users.find((e)=> e.userId == id));
+    if(posts[0]){
     setCurrPosts(posts.filter((e)=> e.userId == id));
-  },[])
+    }
+  },[posts])
+
+  useEffect(()=>{
+    if(users[0]){
+    setOtherCurrUser(users.find((e)=> e.userId == id));
+    }
+  },[users])
 
   function deletePost (id, nameFile){
     postDelete(id, nameFile);

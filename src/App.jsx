@@ -191,6 +191,7 @@ export default function App() {
     if(profileUrl !== ''){
       updateUser({...currentUser, profileUrl: profileUrl});
     }
+    if(currentUser)
     getAllUsers();
     
     if(currentUser.yourName != undefined && flag){
