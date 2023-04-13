@@ -6,7 +6,7 @@ import { MyContext } from '../App';
 
 export default function ModalC() {
 
-    const {isShowModal, setIsShowModal} = useContext(MyContext);
+  const {isShowModal, setIsShowModal} = useContext(MyContext);
 
   return (
     <>

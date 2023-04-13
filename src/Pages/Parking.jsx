@@ -16,9 +16,8 @@ const myAPIKey = "7aeea4fe26fa4c258c13fb720430df95";
 export default function Parking() {
 
   const { id } = useParams();
-  const { posts, setCordUser, cordUser, users } = useContext(MyContext);
+  const { posts, setCordUser, cordUser } = useContext(MyContext);
   const [current, setCurrent] = useState();
-  const [wid, setWid] = useState(false);
 
   useEffect(() => {
     setCurrent(posts.find((post) => post.id === id));

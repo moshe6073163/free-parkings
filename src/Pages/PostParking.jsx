@@ -22,8 +22,6 @@ export default function PostParking() {
 
   const imageRef = useRef();
   const accessibility = useRef();
-  const city = useRef();
-  const street = useRef();
   const suitable = useRef();
   const price = useRef();
   const detail = useRef();

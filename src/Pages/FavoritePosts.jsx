@@ -15,9 +15,9 @@ export default function FavoritePosts () {
         // update local
         let v = favoritePosts.filter((e)=> e.id !== post.id);
         if(v[0]){
-        setFavoritePosts(v);
+          setFavoritePosts(v);
         } else {
-        setFavoritePosts([]);
+          setFavoritePosts([]);
         }
     }
 

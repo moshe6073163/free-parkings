@@ -7,14 +7,14 @@ import { MyContext } from '../App';
 
 export default function Allert(props) {
   const [open, setOpen] = useState(props.set);
-  const {setIsShowAlert} = useContext(MyContext);
+  const { setIsShowAlert } = useContext(MyContext);
 
-  useEffect(()=>{
-    if(!open){
-      setIsShowAlert({set: false});
+  useEffect(() => {
+    if (!open) {
+      setIsShowAlert({ set: false });
     }
-  },[open])
-  
+  }, [open])
+
   return (
     <React.Fragment>
       <Modal
@@ -51,7 +51,7 @@ export default function Allert(props) {
             fontWeight="lg"
             mb={1}
           >
-            Massege: 
+            Massege:
           </Typography>
           <Typography id="modal-desc" textColor="text.tertiary">
             {props.detail}

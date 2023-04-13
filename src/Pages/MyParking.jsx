@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { MyContext } from '../App';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { TextField } from '@mui/joy';
 import ActivityTime from '../Components/ActivityTime';
 
 

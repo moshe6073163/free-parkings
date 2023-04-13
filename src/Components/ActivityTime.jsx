@@ -57,7 +57,6 @@ export default function ActivityTime(props) {
   ]
 
 
-
   return (
     <>
       {!props.parking ?

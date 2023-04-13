@@ -4,15 +4,12 @@ import { MyContext } from "../App";
 import { location } from "../Components/APIs";
 import { GrFavorite } from "react-icons/gr";
 import { MdFavorite } from "react-icons/md";
-import { height } from "@mui/system";
 import Allert from "../Components/Allert";
 
 export default function Home() {
   const {setIsShowAlert , setInput, currentUser, setFavoritePosts, favoritePosts, updatePost, updateUser} = useContext(MyContext);
   const [inputData, setInputData] = useState([]); 
   
-  
-
   let v = document.getElementById('search');
   function startSearch(){
     setInput(v.value.charAt(0).toUpperCase() + v.value.slice(1));
@@ -29,45 +26,6 @@ export default function Home() {
 
   function getData(e){
     location(e, setInputData);
-  }
-
-  function setFavorite(post){
-    if(currentUser.id){
-      let p = currentUser.favoritePosts.filter((e)=> e === post.id);
-      if(p[0]){
-        currentUser.favoritePosts = currentUser.favoritePosts.filter((e)=>e !== post.id);
-        updateUser(currentUser);
-        post.favorite-=1;
-        updatePost(post);
-        let v = favoritePosts.filter((e)=> e.id !== post.id);
-        if(v[0]){
-          setFavoritePosts(v);
-        } else {
-          setFavoritePosts([]);
-        }
-      } else {
-        currentUser.favoritePosts = [...currentUser.favoritePosts, post.id];
-        updateUser(currentUser);
-        post.favorite+=1;
-        updatePost(post);
-        setFavoritePosts([...favoritePosts, post]);
-      }
-    } else {
-      setIsShowAlert({set: true, component: <Allert set={true} detail = {"Please log in"}/> })            
-
-    }
-    
-  }
-
-  const setFav = (id)=>{
-    if(currentUser.id){
-      let p = currentUser.favoritePosts.find((e)=> e === id);
-      if(p){
-        return (<MdFavorite size={30}/>)
-      } else {
-        return (<GrFavorite size={30}/>)
-      }
-    }
   }
 
 
@@ -104,8 +62,6 @@ export default function Home() {
     <div className="d-flex justify-content-center flex-wrap">
       <div className="col-sm-4 col-10 d-flex  mb-sm-0 mb-2 rounded  h-sm-75" >
         <img src="https://i.imagesup.co/images2/fa578cc5194b76cef23d2f175890b2b0ba81e6e4.png" width={'100%'}/>
-        {/* <img src="https://equinsaparking.com/wp-content/uploads/2017/07/lectorTicketMatriculaPeq-1.gif" width={'100%'}/> */}
-        {/* <img src="https://i.imagesup.co/images2/6d4130c2afe7821e921360c5d3c789ed38a6ab64.png" width={'100%'}/> */}
       </div>
       <div className="col-sm-4 col-12 d-flex flex-wrap justify-content-sm-start justify-content-center">
         <div className="mx-4 mb-1">
@@ -113,7 +69,7 @@ export default function Home() {
           <div className="display-3 text-secondary">How are you</div>
           <div className=" d-flex mt-3 w-75 justify-content-between">
             <Link id="linkToParkings" to={"/Parkings"} className="btn btn-outline-secondary w-100 hover-overlay">Search Parkings</Link>
-            <Link to={"/PostParking"} className="btn text-secondary w-100">post parking</Link>
+            <Link to={"/PostParking"} className="btn text-secondary w-100 ">post parking</Link>
           </div>
         </div>
       </div>
@@ -122,6 +78,3 @@ export default function Home() {
   </>
   );
 }
-
-
-//style={{width: '80%'}}

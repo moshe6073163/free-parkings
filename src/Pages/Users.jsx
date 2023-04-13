@@ -25,5 +25,3 @@ export default function Users() {
     </>
   )
 }
-
-//{/* <div className='btn btn-warning ' onClick={e => setPosts(u)}>See Posts</div> */}

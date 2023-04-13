@@ -148,7 +148,6 @@ export default function App() {
   }
    
 
-
   const localeUId = localStorage.getItem('userId');
   function setUser (UserName, password){ 
     let queryUser;
@@ -246,10 +245,6 @@ export default function App() {
   },[]);
   
 
-  
-
-  
-
   function updateUser(user){
     let a = doc(firestore, 'users', `${user.id}`);
     const loc = updateDoc(a,user);
@@ -261,7 +256,6 @@ export default function App() {
   }
 
   function postDelete(id, fileName){
-
     /// delete post from firebase
     let a = doc(firestore, 'posts', `${id}`);
     let n = deleteDoc(a);
@@ -281,7 +275,7 @@ export default function App() {
         snapshot.docs.forEach((doc) => {
           books.push({ ...doc.data(), id: doc.id });
         });
-      
+
     let u = books[0];
     let p = posts.filter((e)=> e.userId == u.userId);
     p.map((e)=>{
@@ -332,12 +326,12 @@ export default function App() {
   };
 
   return (
-    <div className="bg_site">
+  <div className="bg_site">
     <div className="" >
       <div id="GoToUp" className="" style={{minHeight: '90vh'}}>
         <MyContext.Provider value={AllData}>
         {isShowAlert.set ? isShowAlert.component : ""}
-          <Header  />
+          <Header />
           <Routes >
             <Route path="/" element={<Home />}></Route>
             <Route path="/*" element={<PageError />}></Route>
@@ -358,6 +352,6 @@ export default function App() {
       </div>
     </div>
     <Footer/>
-    </div>
+  </div>
   );
 }
