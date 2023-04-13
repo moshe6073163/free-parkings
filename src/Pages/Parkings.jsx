@@ -100,8 +100,8 @@ export default function Parkings() {
     </button>
   </div>
 
-  {!map ? "" :
-    <div className="row d-flex justify-content-center"> 
+  {!map ? "" : !cordUser ? "" : 
+    <div className="row d-flex justify-content-center">
     <MapContainer className="mb-3 mx-3 rounded col-sm-11 col-10 " id="my" center={[cordUser.latitude , cordUser.longitude]} style={{ height:'500px'}} zoom={13} scrollWheelZoom={true}>
       <TileLayer 
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -70,10 +70,11 @@ export default function Parking() {
   }, [v.coords])
 
   var map;
-  let m = document.getElementById('my-map');
 
   async function maps(e) {
     e.preventDefault();
+    if(!cordUser)return;
+    let m = document.getElementById('my-map');
     if (!m.style.display || m.style.display == 'none') {
 
       m.style.display = 'block';
