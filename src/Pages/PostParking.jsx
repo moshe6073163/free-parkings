@@ -125,9 +125,7 @@ export default function PostParking() {
     const t = document.getElementById('street');
     t.value = e;
     setGeo({ lat: totalStreet[0].properties.lat, lon: totalStreet[0].properties.lon });
-    setTimeout(() => {
       setTotalStreet([]);
-    }, 1000);
   }
 
 
@@ -195,12 +193,13 @@ export default function PostParking() {
 
                   <div className="col-5 p-0">
                     <TextField required color="warning" id="street" label="Street" variant="outlined" className="bg-light rounded col-10 m-2" onChange={(e) => setAddressInput(e.target.value)} />
-                    <div className="PositionPostParking d-flex flex-column align-items-center col-5">{totalStreet.map((e, i) => (
-                      <div className="col-12 border">{i < 1 ? <button className="w-100 border btn-light" onClick={(e) => setTotalAddress(e.target.innerHTML)}>{e.properties.address_line1}</button>
-                        :
+                    <div className="PositionPostParking bg-light  rounded d-flex flex-column align-items-center col-5">{totalStreet.map((e, i) => (
+                      <div className="col-12 rounded">{i < 1 ? <div>
+                      <button className="col-12 border rounded" onClick={(e) => setTotalAddress(e.target.innerHTML)}>{e.properties.address_line1}</button>
+                       </div> :
                         totalStreet[i].properties.address_line1 == totalStreet[i - 1].properties.address_line1 ? ""
                           :
-                          <button className="border btn-light col-12" onClick={(e) => setTotalAddress(e.target.innerHTML)}>{totalStreet[i].properties.address_line1}</button>}</div>))}
+                          <button className="col-12 border rounded" onClick={(e) => setTotalAddress(e.target.innerHTML)}>{totalStreet[i].properties.address_line1}</button>}</div>))}
                     </div>
                   </div>
                 </div>
