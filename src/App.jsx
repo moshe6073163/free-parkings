@@ -344,8 +344,8 @@ export default function App() {
             <Route path="/NewUser" element={<NewUser />}></Route>
             <Route path="/FavoritePosts" element={<FavoritePosts />}></Route>
             <Route path="/PostParking" element={<PostParking />}></Route>
-            <Route path="/Users" element={<Users />}></Route>
-            <Route path="/Users/Admin/:id" element={<Admin />}></Route>
+            {/* <Route path="/Users" element={<Users />}></Route> */}
+            {/* <Route path="/Users/Admin/:id" element={<Admin />}></Route> */}
           </Routes>
           {/* <a style={{zIndex:'9999', position:'fixed', bottom:'50px', height:'50px'}}   href="#GoToUp"><IoArrowUpOutline className="border rounded-circle text-light" size={50}/></a> */}
         </MyContext.Provider>

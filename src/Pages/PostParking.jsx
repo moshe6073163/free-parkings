@@ -1,18 +1,15 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { useRef } from "react";
-import { useContext } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { BiCurrentLocation, BiImageAdd } from "react-icons/bi";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../App";
+import ActivityTime from "../Components/ActivityTime";
 import ModalC from '../Components/ModalC'
 import { location, getCurrLoc } from '../Components/APIs';
 import { TextField } from "@mui/material";
 import { useGeolocated } from "react-geolocated";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import ActivityTime from "../Components/ActivityTime";
 
 
 export default function PostParking() {
