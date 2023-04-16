@@ -146,9 +146,9 @@ export default function Parking() {
                   </button>
                 </div>
                 <div class="col-5 d-flex justify-content-between">
-                  <button class="btn btn-primary btn-lg mb-2 " style={{ height: '48px' }} onClick={() => hideContact()}>contact</button>
+                  <button class="btn btn-primary btn-lg mb-2 mx-2" style={{ height: '48px' }} onClick={() => hideContact()}>contact</button>
                   {hide ?
-                    <div className={' d-flex flex-column align-items-center '} style={{  }}>
+                    <div className={' d-flex flex-column align-items-center mb-2'} style={{  }}>
                       <img className="" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" style={{ width: "90px", height: "90px" }} />
                       <div className="d-flex flex-wrap justify-content-center mb-2">Name: <p>{current.contactName}</p></div>
                       <div ><a href={`tel:${current.contactPhone}`}><MdCall className="bg-light rounded-circle mb-3 p-0 mt-0" size={48} /></a></div>
