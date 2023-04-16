@@ -4,7 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../App";
 import ActivityTime from "../Components/ActivityTime";
-import ModalC from '../Components/ModalC'
+import ModalC from '../Components/ModalC';
 import { location, getCurrLoc } from '../Components/APIs';
 import { TextField } from "@mui/material";
 import { useGeolocated } from "react-geolocated";
