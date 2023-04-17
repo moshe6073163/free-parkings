@@ -1,8 +1,17 @@
 /* for home page */
 .bg_site {
-    background-image: url("https://parking-pal.netlify.app/static/media/background.f0b4ffbe30df9b2f4171.jpeg");
+    background-image: url("https://i.imagesup.co/images2/5f75b5e5dda599d8ad8e5168c38698ebc085d0db.jpg");
     /* background-repeat: repeat; */
-    /* background-size: cover; */
+    background-size: contain;
+    font-style:italic;
+    /* background-color: rgb(114, 192, 247); */
+    /* box-shadow: 2px 2px 12px 2px rgb(164, 210, 244); */
+}
+
+.bg_site_dark_mode {
+    background-image: url("https://i.imagesup.co/images2/ac69fd98c42d91386ffbfb6b1bf37686cb9cb717.jpg");
+    /* background-repeat: repeat; */
+    background-size:contain;
     font-style:italic;
     /* background-color: rgb(114, 192, 247); */
     /* box-shadow: 2px 2px 12px 2px rgb(164, 210, 244); */
@@ -81,7 +90,7 @@ img{
     transform: scale(1.05);
 }
 .color-font{
-    color: rgb(206, 215, 105);
+    color: rgb(218, 225, 143);
 }
 .color-font:hover{
     color: rgb(206, 215, 105);

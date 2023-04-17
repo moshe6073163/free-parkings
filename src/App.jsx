@@ -48,6 +48,7 @@ export default function App() {
   const [flag, setflag] = useState(true);  
   const [isShowAlert, setIsShowAlert] = useState({set: false});
   const [activityTime, setActivityTime] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
   const navigate = useNavigate();
 
   // function to create new user
@@ -322,11 +323,13 @@ export default function App() {
     setFavoritePosts,
     setIsShowAlert,
     activityTime,
-    setActivityTime
+    setActivityTime,
+    darkMode,
+    setDarkMode,
   };
 
   return (
-  <div className="bg_site">
+  <div className={!darkMode ? "bg_site" : 'bg_site_dark_mode' }>
     <div className="" >
       <div id="GoToUp" className="" style={{minHeight: '90vh'}}>
         <MyContext.Provider value={AllData}>

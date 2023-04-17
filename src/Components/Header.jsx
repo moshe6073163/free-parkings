@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { FaUserAltSlash, FaUserCheck } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../App";
-import { MdFavorite } from "react-icons/md";
+import { MdFavorite, MdDarkMode } from "react-icons/md";
+import { BsFillSunFill } from "react-icons/bs";
 
 export default function Header() {
-  const { currentUser, setCurrentUser, setProfileUrl } = useContext(MyContext);
+  const { currentUser, setCurrentUser, setProfileUrl, setDarkMode, darkMode } = useContext(MyContext);
   const [showName, setShowName] = useState(true);
   const navigate = useNavigate();
 
@@ -63,6 +64,11 @@ export default function Header() {
                   About
                 </Link>
               </li>
+              {/* <li>
+                <div className="nav-link text-primary d-flex justify-content-center" onClick={()=> setDarkMode(!darkMode)}>
+                  {darkMode ? <div>Sun Mode <BsFillSunFill size={30}/></div> : <div>Dark Mode <MdDarkMode size={30}/></div>}
+                </div>
+              </li> */}
               {currentUser.yourName != undefined ? (
                 <div className="">
                   {/* {currentUser.admin == false ? (
