@@ -64,20 +64,20 @@ export default function Header() {
                   About
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <div className="nav-link text-primary d-flex justify-content-center" onClick={()=> setDarkMode(!darkMode)}>
                   {darkMode ? <div>Sun Mode <BsFillSunFill size={30}/></div> : <div>Dark Mode <MdDarkMode size={30}/></div>}
                 </div>
-              </li> */}
+              </li>
               {currentUser.yourName != undefined ? (
                 <div className="">
-                  {/* {currentUser.admin == false ? (
+                  {currentUser.admin == false ? (
                     ""
                   ) : (
                     <Link className="d-flex justify-content-center nav-link text-primary" to={"/Users"}>
                       Users
                     </Link>
-                  )} */}
+                  )}
 
                   <li>
                     <Link className="d-flex justify-content-center nav-link text-primary" to={"/FavoritePosts"}>My Favorite <MdFavorite className="mx-1 text-danger mt-2" size={30} /></Link>
