@@ -67,7 +67,7 @@ export default function PostParking() {
       userId: currentUser.userId,
       accessibility: accessibility.current.checked,
       detail: detail != undefined ? detail.current.value : "",
-      code: code != undefined ? code.target.checked : "",
+      code: code != undefined ? code.target.checked : false,
       keyCode: keyCode != undefined ? keyCode.target.value : "",
       city: cityInput,
       street: addressInput,

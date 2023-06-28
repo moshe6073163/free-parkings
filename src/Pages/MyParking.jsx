@@ -124,20 +124,20 @@ export default function MyParking() {
 
                 <div class="fw-bold fs-4 mb-4">Code: 
                   <span className='fs-6'>
-                    {" " + current.code ? " Yes" : " No"}
+                    {current.code ? "Yes" : " No"}
                   </span>
                   {!change ? "" 
                   : 
                   <div className=''>
-                    <input className='mt-2 d-block' type="checkbox" onClick={()=> current.code = !current.code} defaultChecked={current.code} ref={code} />
-                    {!current.code ? <input className='w-50 mt-2' type="text" ref={keyCode} /> : <input className='w-50 mt-2' type="text" defaultValue={current.keyCode} ref={keyCode}/>}
+                    <input className='mt-2 d-block' type="checkbox" onClick={()=> current.code = !current.code} defaultChecked={current.code ? current.code : false} ref={code} />
+                    {current.code != true ? <input className='w-50 mt-2' type="text" ref={keyCode} /> : <input className='w-50 mt-2' type="text" defaultValue={current.keyCode} ref={keyCode}/>}
                   </div>
                   }
                 </div>
 
                 <div class="fw-bold fs-4 mb-4">Accessibility: 
                   <span className='fs-6'>
-                    {" " + current.accessibility  ? " Yes" : " No"}
+                    {current.accessibility  ? " Yes" : " No"}
                   </span>
                   {!change ? "" 
                   : 
